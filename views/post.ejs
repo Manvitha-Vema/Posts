@@ -65,7 +65,7 @@
     <p><%= post.content %></p>
         <div class="button-group">
         <a href="/posts/<%=post.id%>"><button>View Post</button></a>
-        <a href="http://localhost:3000/posts/<%=post.id%>/edit"><button>Edit Post</button></a>
+        <a href="/posts/<%=post.id%>/edit"><button>Edit Post</button></a>
     </div>
         <form class="form" method="post" action="/posts/<%=post.id%>?_method=DELETE">
             <button class="button">Delete Post</button>

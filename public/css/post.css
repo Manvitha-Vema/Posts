@@ -73,12 +73,12 @@ a {
 }
 p {
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* Limit to 3 lines */
+    -webkit-line-clamp: 3; 
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
     word-wrap: break-word;
-    max-height: 4.8em; /* Adjust this for desired height */
+    max-height: 4.8em; 
 }
 
 
@@ -92,10 +92,6 @@ p {
     margin-top: 10px;
 }
 
-/* .post button {
-    padding: 10px;
-    width: 100%; 
-} */
 
 .post form button {
     background-color: #e74c3c;  
@@ -111,7 +107,7 @@ p {
 }
 
 
-/* filters */
+
 #filters{
     display: flex;
     max-width: 80%;
