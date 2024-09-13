@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit post</title>
+    <link rel="stylesheet" href="/css/styles.css">
+
+</head>
+<body>
+    <div class="edit-container">
+    <h2 style="text-align: center;">Edit Your Post</h2>
+    <!-- <h4>ID:<%=post.id%></h4> -->
+    <!-- <h2>Username:<%= post.username %></h2> -->
+    <form  method="post" action="/posts/<%=post.id%>?_method=PATCH">
+        <p style="font-size: larger;"><b>User:</b><%=post.username%></p>
+        <label for="title">Title</label>
+        <input id="title" name="title" placeholder="Enter title name" value=<%=post.title%>>
+
+        <label for="category">Category:</label>
+            <select id="category" name="category" required>
+                <option value="">--Select a category--</option>
+                <option value="General" <%= post.category === 'General' ? 'selected' : '' %>>General</option>
+                <option value="News" <%= post.category === 'News' ? 'selected' : '' %>>News</option>
+                <option value="Discussion" <%= post.category === 'Discussion' ? 'selected' : '' %>>Discussion</option>
+                <option value="Announcement" <%= post.category === 'Announcement' ? 'selected' : '' %>>Announcement</option>
+            </select>
+            
+        <label for="content">Content</label>
+        <textarea name="content" rows="10" cols="10"><%= post.content %></textarea>
+        <button>Submit</button>
+        <a href="/posts" style="text-align: right;"><button>Back</button></a>
+    </form>
+</div>
+</body>
+</html>

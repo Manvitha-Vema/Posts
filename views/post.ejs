@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Posts</title>
+    <link rel="stylesheet" href="/css/post.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+  <div class="div-filter">
+  <div id="filters">
+
+    <a href="/posts" data-category="">
+      <div class="filter">
+        <div><i class="fa-solid fa-fire"></i></div>
+        <p>All</p>
+      </div>
+    </a>
+
+    <a href="#" data-category="General">
+      <div class="filter">
+        <div><i class="fa-brands fa-creative-commons-share"></i></div>
+        <p>General</p>
+      </div>
+    </a>
+
+    <a href="#" data-category="News">
+      <div class="filter">
+        <div><i class="fa-solid fa-newspaper"></i></div>
+        <p>News</p>
+      </div>
+    </a>
+
+    <a href="#" data-category="Discussion">
+      <div class="filter">
+        <div><i class="fa-solid fa-comments"></i></div>
+        <p>Discussion</p>
+      </div>
+    </a>
+
+    <a href="#" data-category="Announcement">
+      <div class="filter">
+        <div><i class="fa-solid fa-bullhorn"></i></div>
+        <p>Announcement</p>
+      </div>
+    </a>
+
+    <a href="#" data-category="Technical">
+      <div class="filter">
+        <div><i class="fa-solid fa-microchip"></i></div>
+        <p>Technical</p>
+      </div>
+    </a>
+
+  </div>
+</div>
+
+    <h1>Posts</h1>
+    <div class="container">
+    <% for(post of posts) {%>
+        <div class="post">
+         <p style="font-size: larger;"><b>User:</b><%= post.username %></p>
+    <h3><%= post.title %></h3>
+    <p><%= post.content %></p>
+        <div class="button-group">
+        <a href="/posts/<%=post.id%>"><button>View Post</button></a>
+        <a href="http://localhost:3000/posts/<%=post.id%>/edit"><button>Edit Post</button></a>
+    </div>
+        <form class="form" method="post" action="/posts/<%=post.id%>?_method=DELETE">
+            <button class="button">Delete Post</button>
+        </form>
+    <p id="date"><%= post.createdAt.toDateString() %></p>
+
+    </div>
+        <%}%>
+        <a href="/posts/new"><button>Create New Post</button></a>
+
+    </div>
+    <script src="/js/filter.js"></script>
+    
+</body>
+</html>

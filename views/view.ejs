@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Post</title>
+    <link rel="stylesheet" href="/css/view.css">
+
+</head>
+<body>
+    <!-- <h4>ID:<%=posts.id%></h4> -->
+     <div class="view-container">
+    <p style="font-size: larger;"><b>User:</b><%= post.username %></p>
+    <h3>Title:<%= posts.title %></h3>
+    <p><b>Category:</b> <%= post.category %></p>
+
+    <p class="content-line"><%= posts.content %></p>
+    <div class="flex">
+
+        <a href="/posts"><button>Back</button></a> <p style="text-align: right;"><%= post.createdAt.toDateString() %></p>
+    </div>  
+    </div>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Post</title>
+    <link rel="stylesheet" href="/styles.css">
+
+</head>
+<body>
+    <form method="post" action="/posts">
+        <label for="username">Username:</label>
+        <input id="username" name="username" placeholder="Enter your name here" required>
+        <label for="content">Content</label>
+        <textarea rows="10" cols="35" id="myTextarea" name="content" placeholder="Enter Your content" required maxlength="200" oninput="updateCharCount()"></textarea>
+        <p id="charCount">0/200 characters used</p>
+        <button>Post</button>
+    </form>
+    <a href="/posts"><button>Back</button></a>
+
+    
+    
+<script>
+    console.log("ok");
+    function updateCharCount() {
+      const textarea = document.getElementById("myTextarea");
+      const charCount = textarea.value.length;
+      const maxLength = textarea.getAttribute("maxlength");
+      
+      document.getElementById("charCount").textContent = `${charCount}/${maxLength} characters used`;
+    }
+  </script>
+</body>
+
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create New Post</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <form method="post" action="/posts" onsubmit="return validateTextarea()">
+
+        <label for="username">Username:</label>
+        <input id="username" name="username" placeholder="Enter your username" required>
+        <label for="title">Title:</label>
+        <input id="title" name="title" placeholder="Enter title name" required>
+
+        <label for="category">Category:</label>
+        <select id="category" name="category" required>
+            <option value="">--Select a category--</option>
+            <option value="General">General</option>
+            <option value="News">News</option>
+            <option value="Discussion">Discussion</option>
+            <option value="Announcement">Announcement</option>
+            <option value="Technical">Technical</option>
+        </select>
+        
+        <label for="content">Content</label>
+        <textarea rows="10" cols="35" id="textarea" name="content" placeholder="Enter Your content" required maxlength="1000" ></textarea>
+        
+        <p id="Count">0/1000 characters used</p>
+        <p id="error" style="color: red;"></p>
+        <button type="submit">Post</button>
+    </form>
+    
+    <a href="/posts"><button type="button">Back</button></a>
+
+    <!-- Script placed before the closing body tag -->
+    <script src="/js/form.js"></script>
+</body>
+</html>
